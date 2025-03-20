@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { AuthState, User } from '~/types';
+import type { AuthState, User, AuthUser } from '~/types';
 import md5 from 'md5';
 
 const users: User[] = [

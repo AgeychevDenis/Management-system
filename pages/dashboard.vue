@@ -42,11 +42,11 @@
           <thead class="bg-gray-50">
             <tr>
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Имя</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Статус</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Цена</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Категория</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Дата создания</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
@@ -57,8 +57,8 @@
                 <span
                   :class="{
                     'px-2 py-1 text-xs rounded-full': true,
-                    'bg-green-100 text-green-800': product.status === 'active',
-                    'bg-red-100 text-red-800': product.status === 'inactive',
+                    'bg-green-100 text-green-800': product.status === 'успешный',
+                    'bg-red-100 text-red-800': product.status === 'провальный',
                   }"
                 >
                   {{ product.status }}
@@ -78,6 +78,8 @@
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from '@/stores/auth'
+
 const authStore = useAuthStore()
 const productStore = useProductStore()
 

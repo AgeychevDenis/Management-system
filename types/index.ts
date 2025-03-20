@@ -28,7 +28,7 @@ export interface Product {
 
 export interface AuthState {
   isAuthenticated: boolean;
-  user: User | null;
+  user: AuthUser | null;
 }
 
 export interface ProductsState {
